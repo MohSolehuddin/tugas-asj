@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Sans-Serif;
 }
 
 body {
@@ -44,37 +45,71 @@ header nav ul li:hover a {
 main {
   grid-area: main;
   background-color: #eeeeee;
-  padding: 25px;
+  padding: 5px;
   overflow-y: scroll;
-  display: grid;
-  grid-template-areas: "aboutMe img";
-  grid-template-columns: auto 50px;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  padding-top: 40px;
 }
 main > section{
-  margin-left: 10px;
+  margin-left: 5px;
 }
 .aboutMe{
-  grid-area: aboutMe;
+  flex: 1;
 }
 .img{
-  grid-area: img;
+  width: 80px;
 }
 .img img{
   width: 100%;
 }
 main h1 {
     color: #212121;
+    padding-bottom: 2px;
 }
 
 main h3 {
-  padding: 20px 0;
+  padding-bottom: 20px;
     color: #000;
 }
 
 main p {
+  text-align: justify;
     color: #aeaeae;
 }
-
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  gap: 20px;
+  height: 300px;
+}
+input, textarea{
+  margin: auto;
+  width: 80%;
+  border-radius: 1rem;
+  padding: 10px;
+  border: none;
+}
+::placeholder{
+  color: rgba(0,0,0,.3);
+}
+input{
+  height: 40px;
+}
+form button{
+  margin: auto;
+  width: 80%;
+}
+input:focus{
+  outline: none;
+}
+textarea:focus{
+  outline: none;
+}
 footer {
   grid-area: footer;
     display: flex;
@@ -114,13 +149,11 @@ button:hover {
     transition: all .3s ease-in-out;
     background-color: #00497a;
 }
-
-@media screen and (max-width: 75px) {
-    header {
-        display: flex;
-        width: 100vw;
-        position: absolute;
-        align-items: center;
-        justify-content: center;
+.active{
+  color: #fff;
+}
+@media screen and (max-width: 575px) {
+    main{
+      flex-direction: column;
     }
 }
